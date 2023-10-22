@@ -1,0 +1,22 @@
+export const SliderData = [
+    {
+      image:
+        'https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2022%2F02%2Fa24-everything-everywhere-all-at-once-james-jean-film-poster-art-tw.jpg?w=960&cbr=1&q=90&fit=max'
+    },
+    {
+      image:
+        'https://sportsposterwarehouse.com/cdn/shop/products/star-wars-1977-poster-art-3x5-flag-64026116_1024x1024.jpg?v=1666233206'
+    },
+    {
+      image:
+        'https://c8.alamy.com/comp/HCJEBE/pirates-of-the-caribbean-on-stranger-tides-british-poster-art-from-HCJEBE.jpg'
+    },
+    {
+      image:
+        'https://insidethemagic.net/wp-content/uploads/2018/01/indy_REGULAR_online_preview_029c5c8c-5f56-467a-a3a9-1d006a871096_1024x1024-800x400.jpg'
+    },
+    {
+      image:
+        'https://i.ebayimg.com/images/g/Pq8AAOSwQJ1eYs64/s-l1200.webp'
+    }
+  ];

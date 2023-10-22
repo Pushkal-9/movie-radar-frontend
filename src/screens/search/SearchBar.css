@@ -1,0 +1,35 @@
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    border: 2px solid #ddd;
+    border-radius: 30px;
+    padding: 5px 10px;
+    width: 300px;
+    background-color: #fff;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s, border 0.3s;
+  }
+  
+  .input-wrapper:hover {
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    border: 2px solid #3498db; /* Change border color on hover */
+  }
+  
+  #search-icon {
+    color: #555;
+    margin-right: 10px;
+  }
+  
+  input {
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  /* Customize the placeholder text color */
+  input::placeholder {
+    color: #999;
+  }

@@ -1,0 +1,142 @@
+#upcoming{
+    background-color: #ff9999;
+    padding: 8px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.movie-poster {
+    height: 200%;
+    width: auto;
+}
+.a{
+    height: 250 !important;
+}
+
+.released-movie-grid-item {
+    margin: 15px !important;
+}
+.movie-poster2{
+    height: 100%;
+    width: auto;
+
+}
+
+.flex-container {
+    display: flex;
+}
+
+.flex-container>div {
+    margin: 16px;
+}
+.left {
+    width: 76%;
+}
+.right {
+    padding-top: 20px;
+    width: 24%;
+}
+
+.navbar {
+    height: 60px;
+    background-color: #fef7e5;
+    position: relative;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.navbar li{
+    display: inline;
+}
+
+.logo {
+    width:50px;
+    height: 50px;
+}
+
+
+.navElements ul {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+}
+
+.nav-elements ul a {
+    font-size: 16px;
+    font-weight: 400;
+    color: #2f234f;
+    text-decoration: none;
+}
+  
+.nav-elements ul a.active {
+    color: #574c4c;
+    font-weight: 500;
+    position: relative;
+}
+
+.cityGrid{
+    display: "grid";
+    margin: "10px 25px";
+}
+
+.cityGrid button:nth-child() {
+    grid-row: 1;
+}
+
+.cityButton {
+	box-shadow:inset 0px 0px 15px 3px #23395e;
+	background:linear-gradient(to bottom, #2e466e 5%, #415989 100%);
+	background-color:#2e466e;
+	border-radius:17px;
+	border:1px solid #1f2f47;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	padding:10px 25px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #263666;
+    line-break: initial;
+}
+.cityButton:hover {
+	background:linear-gradient(to bottom, #415989 5%, #2e466e 100%);
+	background-color:#415989;
+    transform: scale(1.1);
+}
+.cityButton:active {
+	position:relative;
+	top:1px;
+}
+
+.search-bar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    height: 15vh; 
+    background-color: #000;
+}
+
+@media (max-width: 992px) {
+    .flex-container {
+        flex-direction: column;
+    }
+    .left {
+        width: 100%;
+    }
+    .right {
+        width: 90%;
+    }
+    .released-movie-grid-item {
+        margin: 8px;
+    }
+}  
