@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import ReactDOM from 'react-dom';
-import { NavLink } from 'react-router-dom';
 import Header from '../../common/header/Header';
 import "./Home.css";
 import { useEffect, useState } from "react";
@@ -83,7 +82,7 @@ function Home() {
       <div className="search-bar-container">
         {console.log("Verify the info: "+city+city_id)}
         <SearchBar setResults={setResults} city_id={city_id} />
-        {results && results.length > 0 && <SearchResultsList results={results} />}
+        {results && results.length > 0 && <SearchResultsList results={results} city_id={city_id}/>}
       </div>
 
       <div className="landingCarousel">
