@@ -8,7 +8,7 @@ export const SearchBar = ({ setResults, city_id }) => {
   const [input, setInput] = useState([]);
   console.log("Trying city id: "+city_id)
 
-  var url = 'http://mr-app-env.eba-j6sddxiv.us-east-2.elasticbeanstalk.com/search/movies?city_id='+city_id
+  var url = 'http://localhost:8080/search/movies?city_id='+city_id
   console.log(url)
   const fetchData = (value) => {
     fetch(url,{

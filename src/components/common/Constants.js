@@ -1,7 +1,7 @@
 const prod = {
     url: {
-      API_BASE_URL: 'https://mybeapp.herokuapp.com',
-      OAUTH2_REDIRECT_URI: 'https://myfeapp.herokuapp.com/oauth2/redirect'
+      API_BASE_URL: 'http://mr-app-env.eba-j6sddxiv.us-east-2.elasticbeanstalk.com',
+      OAUTH2_REDIRECT_URI: 'http://mr-app-env.eba-j6sddxiv.us-east-2.elasticbeanstalk.com/oauth2/redirect'
     }
   }
   

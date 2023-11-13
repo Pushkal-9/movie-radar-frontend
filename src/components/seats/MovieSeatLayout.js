@@ -52,7 +52,7 @@ const MovieSeatLayout = () => {
             columnNumber < updatedSeats[rowNumber].length
           ) {
             updatedSeats[rowNumber][columnNumber].isAvailable = item.available;
-            updatedSeats[rowNumber][columnNumber].isBlocked = !item.available;
+            updatedSeats[rowNumber][columnNumber].isBlocked = !item.available || item.blocked;
             updatedSeats[rowNumber][columnNumber].rate = item.rate;
             updatedSeats[rowNumber][columnNumber].seatId = item.id;
             updatedSeats[rowNumber][columnNumber].row = convertNumberToLetter(item.rowNumber);

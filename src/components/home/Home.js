@@ -19,7 +19,7 @@ function Home() {
   
 
   useEffect(() => {
-    fetch("http://mr-app-env.eba-j6sddxiv.us-east-2.elasticbeanstalk.com/search/city")
+    fetch("http://localhost:8080/search/city")
       .then((res) => res.json())
       .then((json) => {
         setItems(json);
