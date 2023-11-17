@@ -1,0 +1,34 @@
+.movie-details {
+    display: flex;
+    align-items: center;
+  }
+  
+  .movie-image {
+    flex: 1;
+    padding: 10px;
+    text-align: center; /* Center the image horizontally */
+  }
+  
+  .movie-image img {
+    max-width: 100%;
+    height: auto;
+    display: inline; /* Remove extra space below the image */
+    margin: 0 auto; /* Center the image horizontally within the .movie-image div */
+    margin-left: 350px;
+  }
+  
+  .movie-info {
+    flex: 2;
+    padding: 10px;
+    margin-right: -400px;
+  }
+  
+  .movie-info h1 {
+    font-size: 24px;
+  }
+  
+  .movie-info p {
+    font-size: 16px;
+    margin: 5px 0;
+  }
+  

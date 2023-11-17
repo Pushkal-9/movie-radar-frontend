@@ -1,22 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter as Router,Routes,Route, BrowserRouter } from "react-router-dom";
+import ReactDOM from 'react-dom/client'
 import './index.css';
-import Home from './screens/home/Home';
-import SelectShow from "./screens/search/SelectShow";
+import App from './App'
+import 'semantic-ui-css/semantic.min.css'
 
-
-
-
-
-ReactDOM.render(
-    <>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home/>} />
-        <Route path="/selectshow/:city/:movie" element={<SelectShow/>} />
-      </Routes>
-    </BrowserRouter>
-    </>,
-    document.getElementById('root')
-);
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(
+  // <React.StrictMode>
+    <App />
+  // </React.StrictMode>
+)

@@ -1,25 +1,25 @@
-import React, { Component } from "react";
-import ReactDOM from 'react-dom';
-import Header from '../../common/header/Header';
-import "./Home.css";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Modal } from 'react-responsive-modal';
 import 'react-responsive-modal/styles.css';
-import { LandingCarousel } from "./LandingCarousel"
-import { SliderData } from './SliderData';
 import { SearchBar } from "../search/SearchBar";
 import { SearchResultsList } from "../search/SearchResultsList";
+import "./Home.css";
+import { LandingCarousel } from "./LandingCarousel";
+import { SliderData } from './SliderData';
+import { Link } from 'react-router-dom';
+
 
 function Home() {
-  const [openModal, setOpenModal] = useState(true);
+  const [openModal, setOpenModal] = useState(false);
   const [city, setCity] = useState("Select a city...");
   const [city_id, setCityId] = useState(-1);
   const [results, setResults] = useState([]);
   const [items, setItems] = useState([]);
   const [DataisLoaded, setDataIsLoaded] = useState(false);
+  
 
   useEffect(() => {
-    fetch("http://mr-app-env.eba-j6sddxiv.us-east-2.elasticbeanstalk.com/search/city")
+    fetch("http://localhost:8080/search/city")
       .then((res) => res.json())
       .then((json) => {
         setItems(json);
@@ -63,27 +63,23 @@ function Home() {
       
       <nav className="navbar">
         <div className="container">
-          <div className="logo">
-            <img className="logo" src="https://repository-images.githubusercontent.com/363009543/e049ba80-ab25-11eb-8112-78ae862803a0" />
-          </div>
 
+          <div className="search-bar-container">
+        {console.log("Verify the info: "+city+city_id)}
+        <SearchBar setResults={setResults} city_id={city_id} />
+        {results && results.length > 0 && <SearchResultsList results={results} city_id={city_id} />}
+      </div>
+      
           <div className="navElements">
             <ul>
               <li>
                 <button className="cityButton" onClick={onClickButton}>{city}</button>
-              </li>
-              <li>
               </li>
             </ul>
           </div>
         </div>
       </nav>
 
-      <div className="search-bar-container">
-        {console.log("Verify the info: "+city+city_id)}
-        <SearchBar setResults={setResults} city_id={city_id} />
-        {results && results.length > 0 && <SearchResultsList results={results} city_id={city_id}/>}
-      </div>
 
       <div className="landingCarousel">
         <LandingCarousel slides={SliderData} />
