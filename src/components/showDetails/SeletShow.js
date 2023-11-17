@@ -1,14 +1,14 @@
 import React from "react"
-import { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
-import { config } from "../common/Constants";
+import {useState, useEffect} from "react";
+import {useParams, useNavigate} from "react-router-dom";
+import {config} from "../common/Constants";
 import axios from "axios";
-import { Tab, Grid, Button } from "semantic-ui-react";
+import {Tab, Grid, Button} from "semantic-ui-react";
 import "semantic-ui-css/semantic.min.css";
 import "./SelectShow.css";
 
 function SelectShow() {
-    const { cityId, movieId } = useParams();
+    const {cityId, movieId} = useParams();
     const [items, setItems] = useState([]);
     const [DataisLoaded, setDataIsLoaded] = useState(false);
     const [movie, setMovie] = useState([]);
@@ -26,12 +26,12 @@ function SelectShow() {
 
     const groupData = (data) => {
         const groupedItems = {};
-    
+
         data.forEach((show) => {
             const updatedMovie = show.movie;
             setMovie(updatedMovie)
             const key = `${show.theatre.name}-${show.date}`;
-    
+
             if (!groupedItems[key]) {
                 groupedItems[key] = {
                     theatre: show.theatre.name,
@@ -39,35 +39,33 @@ function SelectShow() {
                     shows: {},
                 };
             }
-    
+
             if (!groupedItems[key].shows[show.screen.name]) {
                 groupedItems[key].shows[show.screen.name] = [];
             }
-    
+
             const showInfo = {
                 showId: show.id,
                 startTime: show.startTime,
             };
-    
+
             groupedItems[key].shows[show.screen.name].push(showInfo);
         });
-    
+
         setItems(Object.values(groupedItems));
         console.log(JSON.stringify(groupedItems));
     };
-    
+
 
     const navigateToSeatSelection = (showId) => {
         navigate(`/movie-seat-layout/${showId}`);
-        };
-
+    };
 
 
     useEffect(() => {
-        var formdata = new FormData();
         console.log("cityId " + cityId)
         console.log("movieId " + movieId)
-        instance.post('/search/show', { cityId: cityId, movieId: movieId })
+        instance.post('/search/show', {cityId: cityId, movieId: movieId})
             .then((res) => {
                 groupData(res.data);
                 setDataIsLoaded(true);
@@ -94,7 +92,7 @@ function SelectShow() {
     function formatDate(dateString) {
         const date = new Date(dateString);
         const day = date.getDate();
-        const month = date.toLocaleString('default', { month: 'short' });
+        const month = date.toLocaleString('default', {month: 'short'});
 
         return `${day} ${month}`;
     }
@@ -103,7 +101,7 @@ function SelectShow() {
         <main>
             <div className="movie-details">
                 <div className="movie-image">
-                    <img src={movie.imageLink} alt={movie.name} />
+                    <img src={movie.imageLink} alt={movie.name}/>
                 </div>
                 <div className="movie-info">
                     <h1>{movie.name}</h1>
@@ -118,7 +116,7 @@ function SelectShow() {
             </div>
             <div>
                 <Tab
-                    menu={{ fluid: true, horizontal: true, tabular: true }}
+                    menu={{fluid: true, horizontal: true, tabular: true}}
                     panes={items.map((item, index) => ({
                         menuItem: formatDate(item.date),
                         render: () => (
@@ -154,10 +152,7 @@ function SelectShow() {
             </div>
         </main>
     );
-};
-
-
-
+}
 
 
 export default SelectShow;
