@@ -13,6 +13,7 @@ import MovieSeatLayout from './components/seats/MovieSeatLayout'
 import SelectShow from './components/showDetails/SeletShow'
 import CheckoutCallback from "./components/booking/CheckoutCallback";
 import BookingDetails from "./components/booking/BookingDetails";
+import ChatRoom from './components/chat/ChatRoom';
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
                     <Route path="/selectshow/:cityId/:movieId" element={<SelectShow/>}/>
                     <Route path="/show/:showId/booking/:bookingId/status/:statusCode" element={<CheckoutCallback/>}/>
                     <Route path="/booking/:bookingId/details" element={<BookingDetails/>}/>
+                    <Route path="/chat" element={<ChatRoom/>} />
                 </Routes>
             </Router>
         </AuthProvider>

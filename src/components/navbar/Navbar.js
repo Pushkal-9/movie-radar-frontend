@@ -4,10 +4,13 @@ import { Container, Menu } from 'semantic-ui-react'
 import { useAuth } from '../auth/AuthContext'
 import styles from './navbar.module.css'
 import myImage from '../../assets/logo-color.png'
+import { useNavigate } from 'react-router-dom';
 
 
 function Navbar() {
   const { getUser, userIsAuthenticated, userLogout } = useAuth()
+
+  const navigate = useNavigate();
 
   const logout = () => {
     userLogout()
@@ -35,6 +38,7 @@ function Navbar() {
           </div>  Movie Radar </Menu.Item>
         <Menu.Item as={Link} exact='true' to="/">Home</Menu.Item>
         <Menu.Menu position='right' >
+          <Menu.Item onClick={() => navigate('/chat')}>ChatRoom</Menu.Item>
           <Menu.Item as={Link} to="/login" style={enterMenuStyle()}>Login</Menu.Item>
           <Menu.Item as={Link} to="/signup" style={enterMenuStyle()}>Sign Up</Menu.Item>
           <Menu.Item header style={logoutMenuStyle()}>{`Hi ${getUserName()}`}</Menu.Item>
