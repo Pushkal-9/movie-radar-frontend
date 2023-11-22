@@ -1,26 +1,31 @@
 import React, { useEffect, useState } from 'react';
 import { over } from 'stompjs';
 import SockJS from 'sockjs-client';
-import styles from './chat.css'
+import styles from './chat.css';
+import { useAuth } from '../auth/AuthContext';
 
 var stompClient = null;
 
 const ChatRoom = () => {
+    const { getUser, userIsAuthenticated } = useAuth(); // Use the useAuth context
+    const authenticatedUser = getUser(); // Get the authenticated user
+
     const [privateChats, setPrivateChats] = useState(new Map());
     const [publicChats, setPublicChats] = useState([]);
     const [tab, setTab] = useState("CHATROOM");
     const [userData, setUserData] = useState({
-        username: '',
+        username: authenticatedUser ? authenticatedUser.data.name : '', // Set the username from authenticated user
         connected: false,
         message: ''
     });
     const [typingNotification, setTypingNotification] = useState('');
 
     useEffect(() => {
-        if (userData.connected && tab !== "CHATROOM") {
-            stompClient.subscribe('/user/' + userData.username + '/typing', onTypingReceived);
+        if (userIsAuthenticated() && userData.username) {
+            connect();
         }
-    }, [userData.connected, tab]);
+    }, [userData.username]);
+
 
     const connect = () => {
         let Sock = new SockJS('http://localhost:8080/ws');
@@ -147,11 +152,6 @@ const ChatRoom = () => {
     };
 
 
-
-    const registerUser = () => {
-        connect();
-    };
-
     return (
         <div className="chat-container">
             {userData.connected ?
@@ -208,19 +208,10 @@ const ChatRoom = () => {
                 </>
                 :
                 <div className="register">
-                    <p>Dev note: authenticate role and check for login here once done remove div class 'register' </p>
-                    <input
-                        id="user-name"
-                        placeholder="Enter your name"
-                        name="userName"
-                        value={userData.username}
-                        onChange={handleUsername}
-                        margin="normal"
-                    />
-                    <button type="button" onClick={registerUser}>
-                        connect
-                    </button>
+                    <p>Please authenticate to use the chat.</p>
+                    <span>Debug: Authenticated username - {userData.username}</span>
                 </div>
+
             }
         </div>
     )
