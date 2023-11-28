@@ -9,6 +9,9 @@ import { SliderData } from './SliderData';
 import { Link } from 'react-router-dom';
 
 
+import MiniChat from "../chat/MiniChat";
+
+
 function Home() {
   const [openModal, setOpenModal] = useState(false);
   const [city, setCity] = useState("Select a city...");
@@ -84,6 +87,11 @@ function Home() {
       <div className="landingCarousel">
         <LandingCarousel slides={SliderData} />
       </div>
+
+      <div>
+        <MiniChat />
+      </div>
+
     </div>
   );
 }

@@ -156,9 +156,6 @@ const ChatRoom = () => {
         <div className="chat-container">
             {userData.connected ?
                 <>
-                    <header className="chat-header">
-                        <h2>Welcome, {userData.username}!</h2> {/* Displaying the user's name */}
-                    </header>
                     <div className="chat-box">
                         <div className="member-list">
                             <ul>
@@ -208,8 +205,7 @@ const ChatRoom = () => {
                 </>
                 :
                 <div className="register">
-                    <p>Please authenticate to use the chat.</p>
-                    <span>Debug: Authenticated username - {userData.username}</span>
+                    <p>Please login to use the chat.</p>
                 </div>
 
             }
