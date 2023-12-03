@@ -1,0 +1,32 @@
+nav {
+    background-color: #f8c706;
+    padding: 10px 0;
+  }
+  
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  li {
+    margin: 0 15px;
+    color: rgb(17, 17, 17);
+    display: inline-block;
+  }
+  
+  a {
+    text-decoration: none; 
+    font-weight: bold;
+    color: rgb(17, 17, 17);
+  }
+  
+  a:hover {
+    color: #464646;
+  }
+  
+  .logout-button {
+    margin-left: 100px; 
+  }
