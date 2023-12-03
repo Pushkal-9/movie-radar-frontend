@@ -88,9 +88,12 @@ function Home() {
         <LandingCarousel slides={SliderData} />
       </div>
 
+
+      {/* Rip Mini-chat 2023 - 2023
       <div>
         <MiniChat />
       </div>
+      */}
 
     </div>
   );

@@ -38,6 +38,7 @@ const ChatRoom = () => {
         stompClient.subscribe('/chatroom/public', onMessageReceived);
         stompClient.subscribe('/chatroom/userlist', onUserListReceived);
         stompClient.subscribe('/user/' + userData.username + '/private', onPrivateMessage);
+        stompClient.subscribe('/user/' + userData.username + '/typing', onTypingReceived);
         userJoin();
     };
 
@@ -188,7 +189,7 @@ const ChatRoom = () => {
                                         <li className={`message ${chat.senderName === userData.username && "self"}`} key={index}>
                                             {chat.senderName !== userData.username && <div className="avatar">{chat.senderName}</div>}
                                             <div className="message-data">{chat.message}</div>
-                                            {chat.senderName === userData.username && <div className="avatar self">{chat.senderName} <p className={"chat-status-tag"}> status </p> </div>}
+                                            {chat.senderName === userData.username && <div className="avatar self">{chat.senderName} <p className={"chat-status-tag"}> Delivered </p> </div>}
 
                                         </li>
                                     ))}

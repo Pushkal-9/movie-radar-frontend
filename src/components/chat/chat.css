@@ -48,7 +48,7 @@ button{
     margin-left: 10px;
     padding: 10px;
     display: grid;
-    grid-template-rows: 1fr auto; /* Allocate remaining space to messages, minimum needed to input */
+    grid-template-rows: 1fr auto; 
 }
 
 .chat-messages{
@@ -137,9 +137,15 @@ ul {
 .chat-status-tag{
     color: #7c7c7c;
     position: absolute;
-    right: 50px;
+    right: 10%;
+    transform: translateY(10px);
 }
 
 .ui.menu {
     margin: 0;
+}
+
+.typing-notification{
+    position: absolute;
+    bottom: 60px; 
 }
