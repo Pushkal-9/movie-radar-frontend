@@ -13,6 +13,7 @@ import MovieSeatLayout from './components/seats/MovieSeatLayout';
 import SelectShow from './components/showDetails/SeletShow';
 import CheckoutCallback from "./components/booking/CheckoutCallback";
 import BookingDetails from "./components/booking/BookingDetails";
+import UserProfile from "./components/userProfile/UserProfile";
 
 import NavAdm from './components/admin/NavAdm';
 import LoginAdmin from './components/admin/LoginAdmin';
@@ -60,25 +61,26 @@ function App() {
     <div>
       {!(window.location.pathname.includes("/admin") || window.location.pathname.includes("/emp")) && (
         <AuthProvider>
-            <Router>
-                <div>
-                    <Navbar />
-                    <Routes>
-                        <Route path="/" element={<Home />} />
-                        <Route path="/login" element={<Login />} />
-                        <Route path="/signup" element={<Signup />} />
-                        <Route path="/oauth2/redirect" element={<OAuth2Redirect />} />
-                        <Route path="/passwordResetRequest" element={<PasswordResetRequest />} />
-                        <Route path="/resetPassword" element={<PasswordResetForm />} />
-                        <Route path="/resetConfirmation" element={<PasswordResetConfirmation />} />
-                        <Route path="*" element={<Navigate to="/" />} />
-                        <Route path="/movie-seat-layout/:showId" element={<MovieSeatLayout />} />
-                        <Route path="/selectshow/:cityId/:movieId" element={<SelectShow />} />
-                        <Route path="/show/:showId/booking/:bookingId/status/:statusCode" element={<CheckoutCallback />} />
-                        <Route path="/booking/:bookingId/details" element={<BookingDetails />} />
-                    </Routes>
-                </div>
-            </Router>
+        <Router>
+          <div>
+            <Navbar />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<Signup />} />
+              <Route path="/oauth2/redirect" element={<OAuth2Redirect />} />
+              <Route path="/passwordResetRequest" element={<PasswordResetRequest />} />
+              <Route path="/resetPassword" element={<PasswordResetForm />} />
+              <Route path="/resetConfirmation" element={<PasswordResetConfirmation />} />
+              <Route path="*" element={<Navigate to="/" />} />
+              <Route path="/movie-seat-layout/:showId" element={<MovieSeatLayout />} />
+              <Route path="/selectshow/:cityId/:movieId" element={<SelectShow />} />
+              <Route path="/show/:showId/booking/:bookingId/status/:statusCode" element={<CheckoutCallback />} />
+              <Route path="/booking/:bookingId/details" element={<BookingDetails />} />
+              <Route path="/user-profile" element={<UserProfile />} />
+            </Routes>
+          </div>
+        </Router>
         </AuthProvider>
       )}
       {window.location.pathname.includes("/admin") && (

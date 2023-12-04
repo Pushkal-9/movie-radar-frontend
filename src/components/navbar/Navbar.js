@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import { Container, Menu } from 'semantic-ui-react'
 import { useAuth } from '../auth/AuthContext'
 import styles from './navbar.module.css'
@@ -8,6 +8,8 @@ import myImage from '../../assets/logo-color.png'
 
 function Navbar() {
   const { getUser, userIsAuthenticated, userLogout } = useAuth()
+  const navigate = useNavigate();
+
 
   const logout = () => {
     userLogout()
@@ -20,6 +22,10 @@ function Navbar() {
   const logoutMenuStyle = () => {
     return userIsAuthenticated() ? { "display": "block" } : { "display": "none" }
   }
+
+  const userProfile = (showId) => {
+    navigate(`/user-profile`);
+  };
 
 
   const getUserName = () => {
@@ -38,6 +44,7 @@ function Navbar() {
           <Menu.Item as={Link} to="/login" style={enterMenuStyle()}>Login</Menu.Item>
           <Menu.Item as={Link} to="/signup" style={enterMenuStyle()}>Sign Up</Menu.Item>
           <Menu.Item header style={logoutMenuStyle()}>{`Hi ${getUserName()}`}</Menu.Item>
+          <Menu.Item header style={logoutMenuStyle()} onClick={userProfile}>Profile</Menu.Item>
           <Menu.Item as={Link} to="/" style={logoutMenuStyle()} onClick={logout}>Logout</Menu.Item>
         </Menu.Menu>
       </Container>

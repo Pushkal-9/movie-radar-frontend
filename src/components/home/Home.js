@@ -7,7 +7,7 @@ import "./Home.css";
 import { LandingCarousel } from "./LandingCarousel";
 import { SliderData } from './SliderData';
 import { Link } from 'react-router-dom';
-
+import {config} from "../common/Constants";
 
 function Home() {
   const [openModal, setOpenModal] = useState(false);
@@ -19,7 +19,7 @@ function Home() {
   
 
   useEffect(() => {
-    fetch("http://localhost:8080/search/city")
+    fetch(config.url.API_BASE_URL+"/search/city")
       .then((res) => res.json())
       .then((json) => {
         setItems(json);

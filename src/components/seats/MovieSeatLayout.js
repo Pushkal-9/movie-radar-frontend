@@ -5,6 +5,7 @@ import './MovieSeatLayout.css';
 import {Modal} from 'react-responsive-modal';
 import {useAuth} from '../auth/AuthContext'
 import axios from 'axios';
+import {config} from "../common/Constants";
 
 const MovieSeatLayout = () => {
     const [openModal, setOpenModal] = useState(false);
@@ -47,7 +48,7 @@ const MovieSeatLayout = () => {
 
     useEffect(() => {
 
-        fetch('http://localhost:8080/search/seats?show_id=' + showId)
+        fetch(config.url.API_BASE_URL+'/search/seats?show_id=' + showId)
             .then((response) => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
@@ -118,7 +119,7 @@ const MovieSeatLayout = () => {
         };
 
         try {
-            const response = await axios.post('http://localhost:8080/booking/initiate', requestData);
+            const response = await axios.post(config.url.API_BASE_URL + '/booking/initiate', requestData);
             console.log('API Response:', response?.data?.checkoutUri);
 
             const checkoutUri = response?.data?.checkoutUri;
