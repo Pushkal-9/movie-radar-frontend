@@ -21,24 +21,45 @@ import AddEmployee from './components/admin/AddEmployee';
 import EditEmployee from './components/admin/EditEmployee';
 import DeleteEmployee from './components/admin/DeleteEmployee';
 
+import NavEmp from './components/employee/NavEmp';
+import LoginEmp from './components/employee/LoginEmp';
+import AddCustomer from './components/employee/AddCustomer';
+import EditCustomer from './components/employee/EditCustomer';
+import DeleteCustomer from './components/employee/DeleteCustomer';
+
+
+
 function App() {
-  const [isLoggedIn, setLoggedIn] = useState(false);
+  const [isAdminLoggedIn, setAdminLoggedIn] = useState(false);
+  const [isEmpLoggedIn, setEmpLoggedIn] = useState(false);
 
   const authenticate = () => {
-    setLoggedIn(true);
+    setAdminLoggedIn(true);
   };
 
   const logout = () => {
-    setLoggedIn(false);
+    setAdminLoggedIn(false);
   };
 
-  const PrivateRoute = ({ element, ...props }) => {
-    return isLoggedIn ? element : <Navigate to="/admin" />;
+  const PrivateRouteAdmin = ({ element, ...props }) => {
+    return isAdminLoggedIn ? element : <Navigate to="/admin" />;
+  };
+
+  const authenticateEmp = () => {
+    setEmpLoggedIn(true);
+  };
+
+  const logoutEmp = () => {
+    setEmpLoggedIn(false);
+  };
+
+  const PrivateRouteEmp = ({ element, ...props }) => {
+    return isEmpLoggedIn ? element : <Navigate to="/emp" />;
   };
 
   return (
     <div>
-      {window.location.pathname.includes("/admin") || (
+      {!(window.location.pathname.includes("/admin") || window.location.pathname.includes("/emp")) && (
         <AuthProvider>
         <Router>
           <div>
@@ -65,7 +86,7 @@ function App() {
       {window.location.pathname.includes("/admin") && (
         <Router>
           <div className="App">
-            <NavAdm isLoggedIn={isLoggedIn} logout={logout} />
+            <NavAdm isAdminLoggedIn={isAdminLoggedIn} logout={logout} />
             <Routes>
               <Route
                 path="/admin"
@@ -73,15 +94,40 @@ function App() {
               />
               <Route
                 path="/admin/delete-employee"
-                element={<PrivateRoute element={<DeleteEmployee />} />}
+                element={<PrivateRouteAdmin element={<DeleteEmployee />} />}
               />
               <Route
                 path="/admin/add-employee"
-                element={<PrivateRoute element={<AddEmployee />} />}
+                element={<PrivateRouteAdmin element={<AddEmployee />} />}
               />
               <Route
                 path="/admin/edit-employee"
-                element={<PrivateRoute element={<EditEmployee />} />}
+                element={<PrivateRouteAdmin element={<EditEmployee />} />}
+              />
+            </Routes>
+          </div>
+        </Router>
+      )}
+      {window.location.pathname.includes("/emp") && (
+        <Router>
+          <div className="App">
+            <NavEmp isEmpLoggedIn={isEmpLoggedIn} logoutEmp={logoutEmp} />
+            <Routes>
+              <Route
+                path="/emp"
+                element={<LoginEmp authenticateEmp={authenticateEmp} />}
+              />
+              <Route
+                path="/emp/delete-customer"
+                element={<PrivateRouteEmp element={<DeleteCustomer />} />}
+              />
+              <Route
+                path="/emp/add-customer"
+                element={<PrivateRouteEmp element={<AddCustomer />} />}
+              />
+              <Route
+                path="/emp/edit-customer"
+                element={<PrivateRouteEmp element={<EditCustomer />} />}
               />
             </Routes>
           </div>

@@ -47,13 +47,13 @@ const EditEmployee = () => {
 
   return (
     <div>
-    <div className="container">
-      <div className="search-form">
-        <h2>Edit Employee</h2>
-        <form onSubmit={handleSearch}>
+    <div className="admin-container">
+      <div className="admin-search-form">
+        <h2 className="admin-heading">Edit Employee</h2>
+        <form className="admin-form" onSubmit={handleSearch}>
           <div>
-            <label>Employee ID:</label>
-            <input
+            <label className="admin-label">Employee ID:</label>
+            <input className="admin-input"
               type="text"
               value={employeeId}
               onChange={(event) => setEmployeeId(event.target.value)}
@@ -61,17 +61,17 @@ const EditEmployee = () => {
             />
           </div>
           <div>
-            <button type="submit">Search Employee</button>
+            <button className="admin-button" type="submit">Search Employee</button>
           </div>
         </form>
-        {message && <p>{message}</p>}
+        {message && <p className="admin-msg">{message}</p>}
       </div>
       {employeeData.firstName && (
-        <div className="edit-form">
+        <div className="admin-edit-form">
           <form onSubmit={handleEdit}>
             <div>
-              <label>First Name:</label>
-              <input
+              <label className="admin-label">First Name:</label>
+              <input className="admin-input"
                 type="text"
                 name="firstName"
                 value={employeeData.firstName}
@@ -80,8 +80,8 @@ const EditEmployee = () => {
               />
             </div>
             <div>
-              <label>Last Name:</label>
-              <input
+              <label className="admin-label">Last Name:</label>
+              <input className="admin-input"
                 type="text"
                 name="lastName"
                 value={employeeData.lastName}
@@ -90,8 +90,8 @@ const EditEmployee = () => {
               />
             </div>
             <div>
-              <label>Position:</label>
-              <input
+              <label className="admin-label">Position:</label>
+              <input className="admin-input"
                 type="text"
                 name="position"
                 value={employeeData.position}
@@ -100,8 +100,8 @@ const EditEmployee = () => {
               />
             </div>
             <div>
-              <label>Email:</label>
-              <input
+              <label className="admin-label">Email:</label>
+              <input className="admin-input"
                 type="email"
                 name="email"
                 value={employeeData.email}
@@ -110,7 +110,7 @@ const EditEmployee = () => {
               />
             </div>
             <div>
-              <button type="submit">Edit Employee</button>
+              <button className="admin-button" type="submit">Edit Employee</button>
             </div>
           </form>
         </div>

@@ -24,13 +24,13 @@ const AddEmployee = () => {
 
   return (
     <div>
-    <div className="container">
-      <div className="form-container">
-        <h2>Add Employee</h2>
-        <form onSubmit={handleSubmit}>
+    <div className="admin-container">
+      <div className="admin-form-container">
+        <h2 className="admin-heading">Add Employee</h2>
+        <form className="admin-form" onSubmit={handleSubmit}>
           <div>
-            <label>First Name:</label>
-            <input
+            <label className="admin-label">First Name:</label>
+            <input className="admin-input"
               type="text"
               name="firstName"
               value={employeeData.firstName}
@@ -39,8 +39,8 @@ const AddEmployee = () => {
             />
           </div>
           <div>
-            <label>Last Name:</label>
-            <input
+            <label className="admin-label">Last Name:</label>
+            <input className="admin-input"
               type="text"
               name="lastName"
               value={employeeData.lastName}
@@ -49,8 +49,8 @@ const AddEmployee = () => {
             />
           </div>
           <div>
-            <label>Position:</label>
-            <input
+            <label className="admin-label">Position:</label>
+            <input className="admin-input"
               type="text"
               name="position"
               value={employeeData.position}
@@ -59,8 +59,8 @@ const AddEmployee = () => {
             />
           </div>
           <div>
-            <label>Email:</label>
-            <input
+            <label className="admin-label">Email:</label>
+            <input className="admin-input"
               type="email"
               name="email"
               value={employeeData.email}
@@ -69,7 +69,7 @@ const AddEmployee = () => {
             />
           </div>
           <div>
-            <button type="submit">Add Employee</button>
+            <button className="admin-button" type="submit">Add Employee</button>
           </div>
         </form>
       </div>

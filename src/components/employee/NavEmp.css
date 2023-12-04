@@ -1,0 +1,32 @@
+.emp-nav {
+    background-color: #f8c706;
+    padding: 10px 0;
+  }
+  
+  .emp-nav-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .emp-nav-list-item {
+    margin: 0 15px;
+    color: rgb(17, 17, 17);
+    display: inline-block;
+  }
+  
+  .emp-link {
+    text-decoration: none; 
+    font-weight: bold;
+    color: rgb(17, 17, 17);
+  }
+  
+  .emp-link:hover {
+    color: #464646;
+  }
+  
+  .logout-button {
+    margin-left: 100px; 
+  }

@@ -2,23 +2,23 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './NavAdm.css';
 
-const NavAdm = ({ isLoggedIn, logout }) => {
+const NavAdm = ({ isAdminLoggedIn, logout }) => {
   return (
-    <nav>
-      <ul>
+    <nav className="nav-admin">
+      <ul className="nav-admin-list">
         
-        <li>
-          <Link to="/admin/add-employee">Add Employee</Link>
+        <li className="nav-admin-list-item">
+          <Link className="link" to="/admin/add-employee">Add Employee</Link>
         </li>
-        <li>
-          <Link to="/admin/delete-employee">Delete Employee</Link>
+        <li className="nav-admin-list-item">
+          <Link className="link" to="/admin/delete-employee">Delete Employee</Link>
         </li>
-        <li>
-          <Link to="/admin/edit-employee">Edit Employee</Link>
+        <li className="nav-admin-list-item">
+          <Link className="link" to="/admin/edit-employee">Edit Employee</Link>
         </li>
-        {isLoggedIn ? (
+        {isAdminLoggedIn ? (
           <li className="logout-button">
-            <Link onClick={logout}>Logout</Link>
+            <Link className="link" onClick={logout}>Logout</Link>
           </li>
         ) : null}
       </ul>

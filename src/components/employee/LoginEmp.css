@@ -1,5 +1,4 @@
-  
-  .admin-login-container {
+  .emp-login-container {
     background: #f8f7f700;
     min-height: 100vh;
     display: flex;
@@ -9,8 +8,8 @@
     color: #fff;
   }
   
-  .admin-login-form-container {
-    background-color: #00078d;
+  .emp-login-form-container {
+    background-color: #f8c706;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -19,23 +18,23 @@
     text-align: center;
   }
   
-  .admin-heading {
+  .emp-heading {
     margin-bottom: 20px;
     color: #000000;
   }
   
-  .admin-form-group {
+  .emp-form-group {
     margin-bottom: 20px;
   }
   
-  .admin-label {
+  .emp-label {
     font-size: 16px;
     color: #000000;
     display: block;
     margin-bottom: 5px;
   }
   
-  .admin-input {
+  .emp-input {
     width: 100%;
     padding: 10px;
     font-size: 16px;
@@ -43,10 +42,10 @@
     border-radius: 4px;
   }
   
-  .admin-button {
+  .emp-button {
     width: 100%;
     padding: 10px;
-    background-color: #b89900;
+    background-color: #f8c706;
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -56,7 +55,7 @@
     font-weight: bold;
   }
   
-  .admin-button:hover {
+  .emp-button:hover {
     background-color: #b9cdb9;
   }
   

@@ -1,38 +1,37 @@
-
-.admin-container {
+.emp-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
   }
   
-  .admin-form-container {
+  .emp-form-container {
     width: 80%;
     max-width: 400px;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    background-color: #00078d;
+    background-color: #f8c706;
   }
   
-  .admin-heading {
-    color: #eef3ee;
+  .emp-heading {
+    color: #f7f5f5; 
     text-align: center;
   }
   
-  .admin-form {
+  .emp-form {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
   
-  .admin-label {
+  .emp-label {
     font-size: 16px;
-    color: #eeeef6;
+    color: #f9fafb; 
     margin-bottom: 5px;
   }
   
-  .admin-input {
+  .emp-input {
     width: 100%;
     padding: 10px;
     font-size: 16px;
@@ -41,9 +40,9 @@
     border-radius: 4px;
   }
   
-  .admin-button {
-    background-color: #ffffff;
-    color: #00078d;
+  .emp-button {
+    background-color: #fffbfa; 
+    color: #f8c706;
     padding: 10px;
     font-size: 16px;
     border: none;
@@ -53,8 +52,14 @@
     font-weight: bold;
   }
   
-  .admin-button:hover {
-    background-color: #959595;
+  .emp-button:hover {
+    background-color: #b8b4b4;
+  }
+  
+  .emp-msg {
+    color: #fcf7f7; 
+    text-align: center;
+    margin-top: 15px;
   }
   
   @media (max-width: 600px) {
