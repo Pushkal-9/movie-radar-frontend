@@ -2,13 +2,15 @@ import { useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import "./SearchBar.css"
 import React from 'react';
+import { config } from '../common/Constants'
 
 
 export const SearchBar = ({ setResults, city_id }) => {
   const [input, setInput] = useState([]);
+
   console.log("Trying city id: "+city_id)
 
-  var url = 'http://localhost:8080/search/movies?city_id='+city_id
+  var url = config.url.API_BASE_URL + '/search/movies?city_id='+city_id
   console.log(url)
   const fetchData = (value) => {
     fetch(url,{

@@ -1,0 +1,50 @@
+/* UserProfile.css */
+
+/* Styling for the overall UserProfile segment */
+.user-profile-segment {
+    margin: auto;
+    padding: 20px;
+    background-color: #fff;
+    text-align: center !important;
+}
+
+/* Style for headings within the segment */
+.user-profile-segment h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Custom styles for form fields */
+.user-profile-segment .ui.form .field>label {
+    color: #333;
+    font-weight: bold;
+}
+
+.user-profile-segment .ui.input input {
+    border-radius: 5px;
+}
+
+/* Custom styles for buttons */
+.user-profile-segment .ui.button {
+    width: 100%;
+    border-radius: 5px;
+}
+
+/* Add any additional custom styles here */
+
+.user-profile-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-profile-main-content{
+    width:800px;
+}
+
+.user-profile-action-btn{
+    width: 100px !important;
+
+}

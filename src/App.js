@@ -13,6 +13,7 @@ import MovieSeatLayout from './components/seats/MovieSeatLayout';
 import SelectShow from './components/showDetails/SeletShow';
 import CheckoutCallback from "./components/booking/CheckoutCallback";
 import BookingDetails from "./components/booking/BookingDetails";
+import UserProfile from "./components/userProfile/UserProfile";
 
 import NavAdm from './components/admin/NavAdm';
 import LoginAdmin from './components/admin/LoginAdmin';
@@ -55,6 +56,7 @@ function App() {
               <Route path="/selectshow/:cityId/:movieId" element={<SelectShow />} />
               <Route path="/show/:showId/booking/:bookingId/status/:statusCode" element={<CheckoutCallback />} />
               <Route path="/booking/:bookingId/details" element={<BookingDetails />} />
+              <Route path="/user-profile" element={<UserProfile />} />
             </Routes>
           </div>
         </Router>
