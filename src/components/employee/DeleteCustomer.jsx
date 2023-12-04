@@ -20,13 +20,13 @@ const DeleteCustomer = () => {
 
   return (
     <div>
-    <div className="container">
-      <div className="form-container">
-        <h2>Delete Customer</h2>
-        <form onSubmit={handleDelete}>
+    <div className="emp-container">
+      <div className="emp-form-container">
+        <h2 className="emp-heading">Delete Customer</h2>
+        <form className="emp-form" onSubmit={handleDelete}>
           <div>
-            <label>Customer Username:</label>
-            <input
+            <label className="emp-label">Customer Username:</label>
+            <input className="emp-input"
               type="text"
               value={customerUsername}
               onChange={handleInputChange}
@@ -34,10 +34,10 @@ const DeleteCustomer = () => {
             />
           </div>
           <div>
-            <button type="submit">Delete Customer</button>
+            <button className="emp-button" type="submit">Delete Customer</button>
           </div>
         </form>
-        {message && <p>{message}</p>}
+        {message && <p className="emp-msg">{message}</p>}
       </div>
     </div>
     </div>

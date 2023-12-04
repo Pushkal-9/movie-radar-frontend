@@ -1,11 +1,11 @@
-.container {
+.emp-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
   }
   
-  .form-container {
+  .emp-form-container {
     width: 80%;
     max-width: 400px;
     padding: 20px;
@@ -14,24 +14,24 @@
     background-color: #f8c706;
   }
   
-  h2 {
+  .emp-heading {
     color: #f7f5f5; 
     text-align: center;
   }
   
-  form {
+  .emp-form {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
   
-  label {
+  .emp-label {
     font-size: 16px;
     color: #f9fafb; 
     margin-bottom: 5px;
   }
   
-  input {
+  .emp-input {
     width: 100%;
     padding: 10px;
     font-size: 16px;
@@ -40,7 +40,7 @@
     border-radius: 4px;
   }
   
-  button {
+  .emp-button {
     background-color: #fffbfa; 
     color: #f8c706;
     padding: 10px;
@@ -52,11 +52,11 @@
     font-weight: bold;
   }
   
-  button:hover {
+  .emp-button:hover {
     background-color: #b8b4b4;
   }
   
-  p {
+  .emp-msg {
     color: #fcf7f7; 
     text-align: center;
     margin-top: 15px;

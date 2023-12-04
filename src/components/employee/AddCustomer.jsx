@@ -26,13 +26,13 @@ const AddEmployee = () => {
 
   return (
     <div>
-    <div className="container">
-      <div className="form-container">
-        <h2>Add Customer</h2>
-        <form onSubmit={handleSubmit}>
+    <div className="emp-container">
+      <div className="emp-form-container">
+        <h2 className="emp-heading">Add Customer</h2>
+        <form className="emp-form" onSubmit={handleSubmit}>
           <div>
-            <label>Name:</label>
-            <input
+            <label className="emp-label">Name:</label>
+            <input className="emp-input"
               type="text"
               name="name"
               value={customerData.name}
@@ -41,8 +41,8 @@ const AddEmployee = () => {
             />
           </div>
           <div>
-            <label>Username:</label>
-            <input
+            <label className="emp-label">Username:</label>
+            <input className="emp-input"
               type="text"
               name="username"
               value={customerData.username}
@@ -51,8 +51,8 @@ const AddEmployee = () => {
             />
           </div>
           <div>
-            <label>Email:</label>
-            <input
+            <label className="emp-label">Email:</label>
+            <input className="emp-input"
               type="email"
               name="email"
               value={customerData.email}
@@ -61,8 +61,8 @@ const AddEmployee = () => {
             />
           </div>
           <div>
-            <label>Password:</label>
-            <input
+            <label className="emp-label">Password:</label>
+            <input className="emp-input"
               type="password"
               name="password"
               value={customerData.password}
@@ -71,10 +71,10 @@ const AddEmployee = () => {
             />
           </div>
           <div>
-            <button type="submit">Add Customer</button>
+            <button className="emp-button" type="submit">Add Customer</button>
           </div>
         </form>
-        {message && <p>{message}</p>}
+        {message && <p className="emp-msg">{message}</p>}
       </div>
     </div>
     </div>

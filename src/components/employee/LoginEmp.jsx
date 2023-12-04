@@ -27,13 +27,13 @@ const LoginEmp = ({ authenticateEmp }) => {
 
   return (
     <div>
-      <div className="login-container">
-        <div className="login-form-container">
-          <h2>Sign In</h2>
+      <div className="emp-login-container">
+        <div className="emp-login-form-container">
+          <h2 className="emp-heading">Sign In</h2>
           <form onSubmit={handleSubmit}>
-            <div className="form-group">
-              <label>Email:</label>
-              <input
+            <div className="emp-form-group">
+              <label className="emp-label">Email:</label>
+              <input className="emp-input"
                 type="email"
                 name="email"
                 value={email}
@@ -41,9 +41,9 @@ const LoginEmp = ({ authenticateEmp }) => {
                 required
               />
             </div>
-            <div className="form-group">
-              <label>Password:</label>
-              <input
+            <div className="emp-form-group">
+              <label className="emp-label">Password:</label>
+              <input className="emp-input"
                 type="password"
                 name="password"
                 value={password}
@@ -51,8 +51,8 @@ const LoginEmp = ({ authenticateEmp }) => {
                 required
               />
             </div>
-            <div className="form-group">
-              <button type="submit">Sign In</button>
+            <div className="emp-form-group">
+              <button className="emp-button" type="submit">Sign In</button>
             </div>
             {error && <p className="error-message">{error}</p>}
           </form>

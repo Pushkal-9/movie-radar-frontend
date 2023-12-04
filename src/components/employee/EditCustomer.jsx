@@ -47,13 +47,13 @@ const EditCustomer = () => {
 
   return (
     <div>
-    <div className="container">
-      <div className="search-form">
-        <h2>Edit Customer</h2>
-        <form onSubmit={handleSearch}>
+    <div className="emp-container">
+      <div className="emp-search-form">
+        <h2 className="emp-heading">Edit Customer</h2>
+        <form className="emp-form" onSubmit={handleSearch}>
           <div>
-            <label>Customer Username:</label>
-            <input
+            <label className="emp-label">Customer Username:</label>
+            <input className="emp-input"
               type="text"
               value={userName}
               onChange={(event) => setUsername(event.target.value)}
@@ -61,17 +61,17 @@ const EditCustomer = () => {
             />
           </div>
           <div>
-            <button type="submit">Search Customer</button>
+            <button className="emp-button" type="submit">Search Customer</button>
           </div>
         </form>
-        {message && <p>{message}</p>}
+        {message && <p className="emp-msg">{message}</p>}
       </div>
       {customerData.name && (
-        <div className="edit-form">
-          <form onSubmit={handleEdit}>
+        <div className="emp-edit-form">
+          <form className="emp-form" onSubmit={handleEdit}>
             <div>
-              <label>Name:</label>
-              <input
+              <label className="emp-label">Name:</label>
+              <input className="emp-input"
                 type="text"
                 name="name"
                 value={customerData.name}
@@ -80,8 +80,8 @@ const EditCustomer = () => {
               />
             </div>
             <div>
-              <label>Username:</label>
-              <input
+              <label className="emp-label">Username:</label>
+              <input className="emp-input"
                 type="text"
                 name="userName"
                 value={customerData.userName}
@@ -90,8 +90,8 @@ const EditCustomer = () => {
               />
             </div>
             <div>
-              <label>Password:</label>
-              <input
+              <label className="emp-label">Password:</label>
+              <input className="emp-input"
                 type="text"
                 name="password"
                 value={customerData.password}
@@ -100,8 +100,8 @@ const EditCustomer = () => {
               />
             </div>
             <div>
-              <label>Email:</label>
-              <input
+              <label className="emp-label">Email:</label>
+              <input className="emp-input"
                 type="email"
                 name="email"
                 value={customerData.email}
@@ -110,7 +110,7 @@ const EditCustomer = () => {
               />
             </div>
             <div>
-              <button type="submit">Edit Customer</button>
+              <button className="emp-button" type="submit">Edit Customer</button>
             </div>
           </form>
         </div>

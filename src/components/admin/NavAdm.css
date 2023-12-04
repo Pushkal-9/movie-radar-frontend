@@ -1,9 +1,9 @@
-nav {
+.nav-admin {
   background-color: #00078d;
   padding: 10px 0;
 }
 
-ul {
+.nav-admin-list {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -11,18 +11,18 @@ ul {
   justify-content: center;
 }
 
-li {
+.nav-admin-list-item {
   margin: 0 15px;
   color: white;
   display: inline-block;
 }
 
-a {
+.link {
   text-decoration: none; 
   color: white;
 }
 
-a:hover {
+.link:hover {
   color: #d4d3d0;
 }
 

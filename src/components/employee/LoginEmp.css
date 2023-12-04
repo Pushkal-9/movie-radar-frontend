@@ -1,9 +1,4 @@
-body {
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
-  
-  .login-container {
+  .emp-login-container {
     background: #f8f7f700;
     min-height: 100vh;
     display: flex;
@@ -13,7 +8,7 @@ body {
     color: #fff;
   }
   
-  .login-form-container {
+  .emp-login-form-container {
     background-color: #f8c706;
     padding: 20px;
     border-radius: 8px;
@@ -23,23 +18,23 @@ body {
     text-align: center;
   }
   
-  h2 {
+  .emp-heading {
     margin-bottom: 20px;
     color: #000000;
   }
   
-  .form-group {
+  .emp-form-group {
     margin-bottom: 20px;
   }
   
-  label {
+  .emp-label {
     font-size: 16px;
     color: #000000;
     display: block;
     margin-bottom: 5px;
   }
   
-  input {
+  .emp-input {
     width: 100%;
     padding: 10px;
     font-size: 16px;
@@ -47,7 +42,7 @@ body {
     border-radius: 4px;
   }
   
-  button {
+  .emp-button {
     width: 100%;
     padding: 10px;
     background-color: #f8c706;
@@ -60,7 +55,7 @@ body {
     font-weight: bold;
   }
   
-  button:hover {
+  .emp-button:hover {
     background-color: #b9cdb9;
   }
   

@@ -1,13 +1,13 @@
 
-.container {
+.emp-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
   }
   
-  .search-form,
-  .edit-form {
+  .emp-search-form,
+  .emp-edit-form {
     width: 80%;
     max-width: 400px;
     padding: 20px;
@@ -17,24 +17,24 @@
     margin-bottom: 20px;
   }
   
-  h2 {
+  .emp-heading {
     color: #0b0b0b; 
     text-align: center;
   }
   
-  form {
+  .emp-form {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
   
-  label {
+  .emp-label {
     font-size: 16px;
     color: #0f0f0f; 
     margin-bottom: 5px;
   }
   
-  input {
+  .emp-input {
     width: 100%;
     padding: 10px;
     font-size: 16px;
@@ -43,7 +43,7 @@
     border-radius: 4px;
   }
   
-  button {
+  .emp-button {
     background-color: #141414; 
     color: #fdcb05;
     padding: 10px;
@@ -55,11 +55,11 @@
     font-weight: bold;
   }
   
-  button:hover {
+  .emp-button:hover {
     background-color: #59595a; 
   }
   
-  p {
+  .emp-msg {
     color: #181818; 
     text-align: center;
     margin-top: 15px;

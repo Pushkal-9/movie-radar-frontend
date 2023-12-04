@@ -4,21 +4,21 @@ import './NavEmp.css';
 
 const NavEmp = ({ isEmpLoggedIn, logoutEmp }) => {
   return (
-    <nav>
-      <ul>
+    <nav className="emp-nav">
+      <ul className="emp-nav-list">
         
-        <li>
-          <Link to="/emp/add-customer">Add Customer</Link>
+        <li className="emp-nav-list-item">
+          <Link className="emp-link" to="/emp/add-customer">Add Customer</Link>
         </li>
-        <li>
-          <Link to="/emp/delete-customer">Delete Customer</Link>
+        <li className="emp-nav-list-item">
+          <Link className="emp-link" to="/emp/delete-customer">Delete Customer</Link>
         </li>
-        <li>
-          <Link to="/emp/edit-customer">Edit Customer</Link>
+        <li className="emp-nav-list-item">
+          <Link className="emp-link" to="/emp/edit-customer">Edit Customer</Link>
         </li>
         {isEmpLoggedIn ? (
           <li className="logout-button">
-            <Link onClick={logoutEmp}>Logout</Link>
+            <Link className="emp-link" onClick={logoutEmp}>Logout</Link>
           </li>
         ) : null}
       </ul>

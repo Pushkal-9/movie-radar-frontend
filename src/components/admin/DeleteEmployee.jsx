@@ -20,13 +20,13 @@ const DeleteEmployee = () => {
 
   return (
     <div>
-    <div className="container">
-      <div className="form-container">
-        <h2>Delete Employee</h2>
-        <form onSubmit={handleDelete}>
+    <div className="admin-container">
+      <div className="admin-form-container">
+        <h2 className="admin-heading">Delete Employee</h2>
+        <form className="admin-form" onSubmit={handleDelete}>
           <div>
-            <label>Employee ID:</label>
-            <input
+            <label className="admin-label">Employee ID:</label>
+            <input className="admin-input"
               type="text"
               value={employeeId}
               onChange={handleInputChange}
@@ -34,10 +34,10 @@ const DeleteEmployee = () => {
             />
           </div>
           <div>
-            <button type="submit">Delete Employee</button>
+            <button className="admin-button" type="submit">Delete Employee</button>
           </div>
         </form>
-        {message && <p>{message}</p>}
+        {message && <p className="admin-msg">{message}</p>}
       </div>
     </div>
     </div>

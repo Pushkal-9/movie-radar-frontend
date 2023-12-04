@@ -27,13 +27,13 @@ const LoginAdmin = ({ authenticate }) => {
 
   return (
     <div>
-      <div className="login-container">
-        <div className="login-form-container">
-          <h2>Sign In</h2>
+      <div className="admin-login-container">
+        <div className="admin-login-form-container">
+          <h2 className="admin-heading">Sign In</h2>
           <form onSubmit={handleSubmit}>
-            <div className="form-group">
-              <label>Email:</label>
-              <input
+            <div className="admin-form-group">
+              <label className="admin-label">Email:</label>
+              <input className="admin-input"
                 type="email"
                 name="email"
                 value={email}
@@ -41,9 +41,9 @@ const LoginAdmin = ({ authenticate }) => {
                 required
               />
             </div>
-            <div className="form-group">
-              <label>Password:</label>
-              <input
+            <div className="admin-form-group">
+              <label className="admin-label">Password:</label>
+              <input className="admin-input"
                 type="password"
                 name="password"
                 value={password}
@@ -51,8 +51,8 @@ const LoginAdmin = ({ authenticate }) => {
                 required
               />
             </div>
-            <div className="form-group">
-              <button type="submit">Sign In</button>
+            <div className="admin-form-group">
+              <button className="admin-button" type="submit">Sign In</button>
             </div>
             {error && <p className="error-message">{error}</p>}
           </form>
