@@ -1,1 +1,1 @@
-# Booking-Management-System---Software-Engineering-Course
+# MovieRadar Frontend
