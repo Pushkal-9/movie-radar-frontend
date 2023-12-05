@@ -9,6 +9,9 @@ import { SliderData } from './SliderData';
 import { Link } from 'react-router-dom';
 import {config} from "../common/Constants";
 
+import MiniChat from "../chat/MiniChat";
+
+
 function Home() {
   const [openModal, setOpenModal] = useState(false);
   const storedCity = JSON.parse(localStorage.getItem('selectedCity')) || { name: "Select a city...", id: -1 };
@@ -88,6 +91,14 @@ function Home() {
       <div className="landingCarousel">
         <LandingCarousel slides={SliderData} />
       </div>
+
+
+      {/* Rip Mini-chat 2023 - 2023
+      <div>
+        <MiniChat />
+      </div>
+      */}
+
     </div>
   );
 }

@@ -14,6 +14,7 @@ import CheckoutCallback from "./components/booking/CheckoutCallback";
 import BookingDetails from "./components/booking/BookingDetails";
 import UserProfile from "./components/userProfile/UserProfile";
 import AdminApp from "./AdminApp";
+import ChatRoom from "./components/chat/ChatRoom";
 
 
 
@@ -39,6 +40,7 @@ function MainApp() {
                                 <Route path="/show/:showId/booking/:bookingId/status/:statusCode" element={<CheckoutCallback />} />
                                 <Route path="/booking/:bookingId/details" element={<BookingDetails />} />
                                 <Route path="/user-profile" element={<UserProfile />} />
+                                <Route path="/chat" element={<ChatRoom/>} />
                             </Routes>
                         </div>
                     </Router>

@@ -1,0 +1,151 @@
+input {
+    padding: 10px;
+}
+button{
+    border: none;
+    padding: 10px;
+    background: cornflowerblue;
+    color:#fff;
+    font-size: 16px;
+
+}
+
+.chat-header {
+    font-size: 17px;
+    padding: 10px;
+    margin: 0;
+    box-shadow: 0 4px 15px -2px #6b6b6e;
+}
+
+.chat-container{
+    position: relative;
+    background-color: whitesmoke;
+}
+
+.register{
+    padding:30px;
+    box-shadow:0 2.8px 2.2px rgba(0, 0, 0, 0.034),0 6.7px 5.3px rgba(0, 0, 0, 0.048),0 12.5px 10px rgba(0, 0, 0, 0.06),0 22.3px 17.9px rgba(0, 0, 0, 0.072),0 41.8px 33.4px rgba(0, 0, 0, 0.086),0 100px 80px rgba(0, 0, 0, 0.12);
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+}
+.chat-box {
+    min-height: calc(100vh - 79.844px); /* Adjust to header's height */
+    display: flex;
+    flex-direction: row;
+    overflow: auto; 
+}
+
+
+.member-list{
+    width: 25vh;
+    background-color: #080817;
+}
+
+.chat-content {
+    width: 80%;
+    margin-left: 10px;
+    padding: 10px;
+    display: grid;
+    grid-template-rows: 1fr auto; 
+}
+
+.chat-messages{
+    height: 80%;
+    background-color: whitesmoke;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.send-message{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 40px;
+}
+
+.input-message{
+    width:50%;
+    text-decoration: none;
+    background-color: white;
+    outline: none;
+    border-color: transparent;
+    border-radius: 100px;
+}
+
+ul {
+    padding: 0;
+    list-style-type: none;
+
+}
+.send-button{
+    width:10%;
+    border-radius: 50px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+.member{
+    padding: 10px;
+    border:#000;
+    cursor: pointer;
+    text-align: right;
+    font-size: 12px;
+    color: white;
+}
+.member.active{
+    font-weight: bolder;
+    background-color: #242025;
+}
+.member:hover{
+    background: #242025;
+    color:#fff;
+}
+
+.avatar{
+    background-color: #27272a;
+    padding: 3px 15px;
+    border-radius: 50px;
+    color:#fff;
+}
+.avatar.self{
+    color: #ffffff;
+    background-color: #5aadff;
+}
+.message{
+    padding:35px 15px;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    /*
+    background-color: white;
+     */
+    margin: 5px 10px;
+}
+.message-data{
+    padding:5px;
+}
+.message.self{
+    justify-content: end;
+}
+
+.example-app-body{
+    height: 100vh;
+}
+
+.chat-status-tag{
+    color: #7c7c7c;
+    position: absolute;
+    right: 10%;
+    transform: translateY(10px);
+}
+
+.ui.menu {
+    margin: 0;
+}
+
+.typing-notification{
+    position: absolute;
+    bottom: 60px; 
+}
