@@ -4,12 +4,19 @@ import { parseJwt } from './Helpers'
 
 export const movieApi = {
   authenticate,
-  signup
+  signup,
+  fetchUserDetails
 }
 
 function authenticate(username, password) {
   return instance.post('/auth/authenticate', { username, password }, {
     headers: { 'Content-type': 'application/json' }
+  })
+}
+
+function fetchUserDetails(email) {
+  return instance.get('/api/users/email/'+ email +'/details', {
+    headers: {'Content-type': 'application/json'}
   })
 }
 

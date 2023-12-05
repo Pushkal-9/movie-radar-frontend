@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, {useEffect, useState} from 'react'
 import { NavLink, Navigate } from 'react-router-dom'
 import { Button, Form, Grid, Icon, Segment, Menu, Message, Divider } from 'semantic-ui-react'
 import { useAuth } from './AuthContext'
@@ -8,7 +8,6 @@ import {parseJwt, getSocialLoginUrl, handleLogError } from './Helpers'
 function Login() {
   const Auth = useAuth()
   const isLoggedIn = Auth.userIsAuthenticated()
-
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [isError, setIsError] = useState(false)
@@ -37,6 +36,10 @@ function Login() {
 
       Auth.userLogin(authenticatedUser)
 
+      const userDetailsResponse = await movieApi.fetchUserDetails(data.email)
+
+      Auth.storeUserDetails(userDetailsResponse.data)
+
       setUsername('')
       setPassword('')
       setIsError(false)
@@ -46,7 +49,18 @@ function Login() {
     }
   }
 
-  if (isLoggedIn) {
+  const [isAdminLoggedIn, setAdminLoggedIn] = useState(false);
+
+  useEffect(() => {
+    if(isLoggedIn) {
+      let userDetails = JSON.parse(localStorage.getItem('userDetails'))
+      if (userDetails?.userType === 'ADMIN') {
+        setAdminLoggedIn(true)
+      }
+    }
+  }, []);
+
+if (isLoggedIn){
     return <Navigate to='/' />
   }
 

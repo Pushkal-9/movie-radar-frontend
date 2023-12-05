@@ -1,6 +1,7 @@
 .nav-admin {
-  background-color: #00078d;
+  background-color: rgb(46, 70, 110);
   padding: 10px 0;
+  height:60px;
 }
 
 .nav-admin-list {
@@ -9,6 +10,8 @@
   padding: 0;
   display: flex;
   justify-content: center;
+  height: 100%;
+  align-items: center;
 }
 
 .nav-admin-list-item {

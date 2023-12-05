@@ -11,12 +11,13 @@ import {config} from "../common/Constants";
 
 function Home() {
   const [openModal, setOpenModal] = useState(false);
-  const [city, setCity] = useState("Select a city...");
-  const [city_id, setCityId] = useState(-1);
-  const [results, setResults] = useState([]);
+  const storedCity = JSON.parse(localStorage.getItem('selectedCity')) || { name: "Select a city...", id: -1 };
+
+  const [city, setCity] = useState(storedCity.name);
+  const [city_id, setCityId] = useState(storedCity.id);const [results, setResults] = useState([]);
   const [items, setItems] = useState([]);
   const [DataisLoaded, setDataIsLoaded] = useState(false);
-  
+
 
   useEffect(() => {
     fetch(config.url.API_BASE_URL+"/search/city")
@@ -31,11 +32,14 @@ function Home() {
   }, []);
 
   const selectCity = (city) => {
-    
+
     setCity(city.name);
     setCityId(city.id);
+
+    localStorage.setItem('selectedCity', JSON.stringify(city));
     onCloseModal();
   }
+
 
   const onClickButton = (e) => {
     e.preventDefault();
@@ -49,18 +53,18 @@ function Home() {
   return (
     <div>
       {openModal && (
-        <Modal open={openModal} onClose={onCloseModal}>
-          <h3> Select a City </h3>
-          <div className="cityGrid">
-            {items?.map((item) => (
-              <button className="cityButton" onClick={() => selectCity(item)}>
-                {item.name}
-              </button>
-            ))}
-          </div>
-        </Modal>
+          <Modal open={openModal} onClose={onCloseModal}>
+            <h3> Select a City </h3>
+            <div className="cityGrid">
+              {items?.map((item) => (
+                  <button className="cityButton" onClick={() => selectCity(item)}>
+                    {item.name}
+                  </button>
+              ))}
+            </div>
+          </Modal>
       )}
-      
+
       <nav className="navbar">
         <div className="container">
 
@@ -69,7 +73,7 @@ function Home() {
         <SearchBar setResults={setResults} city_id={city_id} />
         {results && results.length > 0 && <SearchResultsList results={results} city_id={city_id} />}
       </div>
-      
+
           <div className="navElements">
             <ul>
               <li>

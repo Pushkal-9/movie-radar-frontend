@@ -4,9 +4,10 @@ import axios from "axios";
 import { config } from "../common/Constants";
 import { Button, Form, Segment, Loader } from 'semantic-ui-react';
 import './UserProfile.css';
+import {Navigate} from "react-router-dom";
 
 function UserProfile() {
-    const { getUser } = useAuth();
+    const { userIsAuthenticated } = useAuth();
     const [dataIsLoaded, setDataIsLoaded] = useState(false);
     const [userDetails, setUserDetails] = useState({});
     const [editMode, setEditMode] = useState(false);
@@ -15,21 +16,11 @@ function UserProfile() {
         baseURL: config.url.API_BASE_URL
     });
 
-    const getUserEmail = () => {
-        const user = getUser();
-        console.log("User Email :", user.data.email);
-        return user ? user.data.email : '';
-    }
 
     useEffect(() => {
-        instance.get('/api/users/email/'+ getUserEmail() +'/details')
-            .then((res) => {
-                setUserDetails(res.data);
-                setDataIsLoaded(true);
-            })
-            .catch(err => {
-                throw new Error(err);
-            });
+        if(userIsAuthenticated){
+            setDataIsLoaded(true)
+            setUserDetails(JSON.parse(localStorage.getItem('userDetails')))}
     }, []);
 
     const handleEditClick = () => {
@@ -39,6 +30,12 @@ function UserProfile() {
     const handleInputChange = (e, { name, value }) => {
         setUserDetails({...userDetails, [name]: value});
     };
+
+
+
+    if (!userIsAuthenticated()) {
+        return <Navigate to='/' />
+    }
 
     if (!dataIsLoaded) return <Loader active inline='centered' />;
 
