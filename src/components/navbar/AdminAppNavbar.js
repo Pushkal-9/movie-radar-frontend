@@ -41,6 +41,10 @@ function AdminAppNavbar() {
         navigate(`/admin/add-show`);
     };
 
+    const chatSupport = (showId) => {
+        navigate(`/admin/chat-support`);
+    };
+
 
     return (
         <Menu inverted color='purple' stackable size='large' style={{ borderRadius: 0, backgroundColor: '#2e466e' }}>
@@ -53,7 +57,7 @@ function AdminAppNavbar() {
                 </Menu.Item>
 
                 <Menu.Menu position='right'>
-                    <Dropdown item text='Add' style={logoutMenuStyle()}>
+                    <Dropdown item text='Add' style={logoutMenuStyle()} >
                         <Dropdown.Menu>
                             <Dropdown.Item onClick={addScreen}>Add Screen</Dropdown.Item>
                             <Dropdown.Item onClick={addShow}>Add Show</Dropdown.Item>
@@ -61,10 +65,8 @@ function AdminAppNavbar() {
                             <Dropdown.Item onClick={addMovie}>Add Movie</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
-                </Menu.Menu>
-
-                <Menu.Menu position='right'>
                     <Menu.Item as={Link} to="/login" style={enterMenuStyle()}>Login</Menu.Item>
+                    <Menu.Item style={logoutMenuStyle()} onClick={chatSupport}>Chat Support</Menu.Item>
                     <Menu.Item as={Link} to="/" style={logoutMenuStyle()} onClick={logout}>Logout</Menu.Item>
                 </Menu.Menu>
             </Container>

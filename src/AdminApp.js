@@ -8,6 +8,7 @@ import AddShow from "./components/admin/AddShow";
 import {useAuth} from "./components/auth/AuthContext";
 import AdminAppNavbar from "./components/navbar/AdminAppNavbar";
 import Login from "./components/auth/Login";
+import ChatSupport from "./components/chat/ChatSupport";
 
 
 
@@ -28,7 +29,10 @@ function AdminApp() {
                         <AdminAppNavbar />
                         <Routes>
                             <Route path="/admin" element={<Login />} />
-
+                            <Route
+                                path="/admin/chat-support"
+                                element={<PrivateRouteAdmin element={<ChatSupport />} />}
+                            />
                             <Route
                                 path="/admin/add-movie"
                                 element={<PrivateRouteAdmin element={<AddMovie />} />}

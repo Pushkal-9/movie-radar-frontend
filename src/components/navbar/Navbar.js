@@ -52,9 +52,7 @@ function Navbar() {
         <Menu.Menu position='right' >
           <Menu.Item as={Link} to="/login" style={enterMenuStyle()}>Login</Menu.Item>
           <Menu.Item as={Link} to="/signup" style={enterMenuStyle()}>Sign Up</Menu.Item>
-          <Menu.Item header style={logoutMenuStyle()}>{`Hi ${getUserName()}`}</Menu.Item>
-          <Menu.Item onClick={() => navigate('/chat')}>ChatRoom</Menu.Item>
-          <Dropdown item text='Profile' style={logoutMenuStyle()}>
+          <Dropdown item text={getUserName()} style={logoutMenuStyle()} position='right'>
             <Dropdown.Menu>
               <Dropdown.Item header style={logoutMenuStyle()} onClick={userProfile}>User Profile</Dropdown.Item>
               <Dropdown.Item header style={adminMenuStyle()} onClick={adminTab}>Admin</Dropdown.Item>

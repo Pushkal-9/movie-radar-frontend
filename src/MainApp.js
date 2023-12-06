@@ -15,13 +15,15 @@ import BookingDetails from "./components/booking/BookingDetails";
 import UserProfile from "./components/userProfile/UserProfile";
 import AdminApp from "./AdminApp";
 import ChatRoom from "./components/chat/ChatRoom";
+import Messaging from "./components/chat/ChatComponent";
 
 
 
 function MainApp() {
 
     return (
-        <div>
+        <main>
+            <div>
             {!(window.location.pathname.startsWith("/admin") || window.location.pathname.startsWith("/emp")) && (
                     <Router>
                         <div>
@@ -41,12 +43,18 @@ function MainApp() {
                                 <Route path="/booking/:bookingId/details" element={<BookingDetails />} />
                                 <Route path="/user-profile" element={<UserProfile />} />
                                 <Route path="/chat" element={<ChatRoom/>} />
+                                <Route path="/messaging" element={<Messaging/>}/>
                             </Routes>
                         </div>
                     </Router>
             )}
             <AdminApp/>
-        </div>
+            </div>
+                <div style={{ position: 'fixed', bottom: 0, right: 5, padding: '10px' }}>
+                    <Messaging />
+                </div>
+
+        </main>
     );
 }
 

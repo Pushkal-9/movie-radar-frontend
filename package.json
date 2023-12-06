@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@ant-design/icons": "^5.2.6",
     "@mui/icons-material": "^5.0.0",
     "@mui/material": "^5.0.0",
     "@talkjs/react": "^0.1.4",
