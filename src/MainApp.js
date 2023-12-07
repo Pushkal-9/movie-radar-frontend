@@ -16,10 +16,16 @@ import UserProfile from "./components/userProfile/UserProfile";
 import AdminApp from "./AdminApp";
 import ChatRoom from "./components/chat/ChatRoom";
 import Messaging from "./components/chat/ChatComponent";
+import {useAuth} from "./components/auth/AuthContext";
+import BookingList from "./components/booking/BookingListingPage";
 
 
 
 function MainApp() {
+
+    const Auth = useAuth();
+    const isLoggedIn = Auth.userIsAuthenticated();
+
 
     return (
         <main>
@@ -44,15 +50,18 @@ function MainApp() {
                                 <Route path="/user-profile" element={<UserProfile />} />
                                 <Route path="/chat" element={<ChatRoom/>} />
                                 <Route path="/messaging" element={<Messaging/>}/>
+                                <Route path="/booking-list" element={<BookingList/>}/>
                             </Routes>
                         </div>
                     </Router>
             )}
             <AdminApp/>
             </div>
+            {isLoggedIn && (
                 <div style={{ position: 'fixed', bottom: 0, right: 5, padding: '10px' }}>
                     <Messaging />
                 </div>
+            )}
 
         </main>
     );

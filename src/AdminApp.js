@@ -9,6 +9,9 @@ import {useAuth} from "./components/auth/AuthContext";
 import AdminAppNavbar from "./components/navbar/AdminAppNavbar";
 import Login from "./components/auth/Login";
 import ChatSupport from "./components/chat/ChatSupport";
+import AddEmployee from "./components/admin/AddEmployee";
+import EditEmployee from "./components/admin/EditEmployee";
+import DeleteEmployee from "./components/admin/DeleteEmployee";
 
 
 
@@ -48,6 +51,18 @@ function AdminApp() {
                             <Route
                                 path="/admin/add-screen"
                                 element={<PrivateRouteAdmin element={<AddScreen />} />}
+                            />
+                            <Route
+                                path="/admin/add-employee"
+                                element={<PrivateRouteAdmin element={<AddEmployee />} />}
+                            />
+                            <Route
+                                path="/admin/add-employee"
+                                element={<PrivateRouteAdmin element={<EditEmployee />} />}
+                            />
+                            <Route
+                                path="/admin/delete-employee"
+                                element={<PrivateRouteAdmin element={<DeleteEmployee />} />}
                             />
                         </Routes>
                     </div>

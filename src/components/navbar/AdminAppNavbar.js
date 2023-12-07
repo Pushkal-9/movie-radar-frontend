@@ -25,23 +25,36 @@ function AdminAppNavbar() {
         return userIsAuthenticated() ? { "display": "block" } : { "display": "none" }
     }
 
-    const addMovie = (showId) => {
+    const addMovie = () => {
         navigate(`/admin/add-movie`);
     };
 
-    const addTheatre = (showId) => {
+    const addTheatre = () => {
         navigate(`/admin/add-theatre`);
     };
 
-    const addScreen = (showId) => {
+    const addEmployee = () => {
+        navigate(`/admin/add-employee`);
+    };
+
+
+    const editEmployee = () => {
+        navigate(`/admin/edit-employee`);
+    };
+
+    const deleteEmployee = () => {
+        navigate(`/admin/delete-employee`);
+    };
+
+    const addScreen = () => {
         navigate(`/admin/add-screen`);
     };
 
-    const addShow = (showId) => {
+    const addShow = () => {
         navigate(`/admin/add-show`);
     };
 
-    const chatSupport = (showId) => {
+    const chatSupport = () => {
         navigate(`/admin/chat-support`);
     };
 
@@ -63,6 +76,13 @@ function AdminAppNavbar() {
                             <Dropdown.Item onClick={addShow}>Add Show</Dropdown.Item>
                             <Dropdown.Item onClick={addTheatre}>Add Theatre</Dropdown.Item>
                             <Dropdown.Item onClick={addMovie}>Add Movie</Dropdown.Item>
+                        </Dropdown.Menu>
+                    </Dropdown>
+                    <Dropdown item text='User Actions' style={logoutMenuStyle()} >
+                        <Dropdown.Menu>
+                            <Dropdown.Item onClick={addEmployee}>Add Employee</Dropdown.Item>
+                            <Dropdown.Item onClick={editEmployee}>Edit Employee</Dropdown.Item>
+                            <Dropdown.Item onClick={deleteEmployee}>Delete Employee</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
                     <Menu.Item as={Link} to="/login" style={enterMenuStyle()}>Login</Menu.Item>

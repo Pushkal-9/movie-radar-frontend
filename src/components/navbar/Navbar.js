@@ -31,6 +31,10 @@ function Navbar() {
     navigate(`/user-profile`);
   };
 
+  const bookingList = () => {
+    navigate(`/booking-list`);
+  };
+
   const adminTab = () => {
     window.location.href = config.url.HOSTED_BASE_URL+'/admin/add-movie'
   };
@@ -55,7 +59,8 @@ function Navbar() {
           <Dropdown item text={getUserName()} style={logoutMenuStyle()} position='right'>
             <Dropdown.Menu>
               <Dropdown.Item header style={logoutMenuStyle()} onClick={userProfile}>User Profile</Dropdown.Item>
-              <Dropdown.Item header style={adminMenuStyle()} onClick={adminTab}>Admin</Dropdown.Item>
+              <Dropdown.Item header style={logoutMenuStyle()} onClick={bookingList}>Bookings</Dropdown.Item>
+              <Dropdown.Item header style={adminMenuStyle()} onClick={adminTab}>Admin Portal</Dropdown.Item>
               <Dropdown.Item as={Link} to="/" style={logoutMenuStyle()} onClick={logout}>Logout</Dropdown.Item>
             </Dropdown.Menu>
           </Dropdown>
